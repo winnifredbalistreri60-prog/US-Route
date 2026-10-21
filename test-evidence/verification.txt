@@ -1,0 +1,5 @@
+JVM tests: 21, failures=0, errors=0
+APK embedded asset SHA-256: e70e0076c720d2b513600f47e4115404b6b9659072d72d6f768c2c64ced73eb8
+APK embedded source lines: 4316
+MainActivity first-launch path: empty saved profiles -> loadBundledProfiles -> AssetManager.open(us-proxies.txt) -> PublicProxySource.loadSnapshot. No runtime fetch required.
+Android UI/device run: not performed.

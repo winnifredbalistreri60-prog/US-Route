@@ -1,0 +1,8 @@
+{
+  "boot_completed": false,
+  "apk_installed": false,
+  "activity_started": false,
+  "timeout_seconds": 180,
+  "elapsed_seconds": 180.3,
+  "emulator_exit_before_cleanup": null
+}

@@ -1,0 +1,113 @@
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/ProfileStore.java:37: Warning: Consider using apply() instead; commit writes its data to persistent storage immediately, whereas apply will handle it in the background [ApplySharedPref]
+ public void clear(){context.getSharedPreferences("vault",0).edit().clear().commit();}
+                                                                            ~~~~~~~~
+
+   Explanation for issues of type "ApplySharedPref":
+   Consider using apply() instead of commit on shared preferences. Whereas
+   commit blocks and writes its data to persistent storage immediately, apply
+   will handle it in the background.
+
+/workspace/usroute-v03/usroute-android/app/build.gradle:8: Warning: Not targeting the latest versions of Android; compatibility modes apply. Consider testing and updating this version. Consult the android.os.Build.VERSION_CODES javadoc for details. [OldTargetApi]
+ defaultConfig { applicationId 'app.usroute'; minSdk 26; targetSdk 35; versionCode 3; versionName '0.3'; testInstrumentationRunner 'android.test.InstrumentationTestRunner' }
+                                                         ~~~~~~~~~~~~
+
+   Explanation for issues of type "OldTargetApi":
+   When your application or sdk runs on a version of Android that is more
+   recent than your targetSdkVersion specifies that it has been tested with,
+   various compatibility modes kick in. This ensures that your application
+   continues to work, but it may look out of place. For example, if the
+   targetSdkVersion is less than 14, your app may get an option button in the
+   UI.
+
+   To fix this issue, set the targetSdkVersion to the highest available value.
+   Then test your app to make sure everything works correctly. You may want to
+   consult the compatibility notes to see what changes apply to each version
+   you are adding support for:
+   https://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+   as well as follow this guide:
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.
+   html
+
+   https://developer.android.com/distribute/best-practices/develop/target-sdk.html
+
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:69: Warning: addDocumentStartJavaScript should only be called if the feature DOCUMENT_START_SCRIPT is present; to check call androidx.webkit.WebViewFeature#isFeatureSupported [RequiresFeature]
+   WebViewCompat.addDocumentStartJavaScript(web,"(()=>{for(const k of ['RTCPeerConnection','webkitRTCPeerConnection','RTCDataChannel','WebTransport']){try{Object.defineProperty(globalThis,k,{value:undefined,writable:false,configurable:false});}catch(e){}}})();",Collections.singleton("*"));
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:70: Warning: setBlockNetworkLoads should only be called if the feature SERVICE_WORKER_BLOCK_NETWORK_LOADS is present; to check call androidx.webkit.WebViewFeature#isFeatureSupported [RequiresFeature]
+   if(WebViewFeature.isFeatureSupported(WebViewFeature.SERVICE_WORKER_BASIC_USAGE)&&WebViewFeature.isFeatureSupported(WebViewFeature.SERVICE_WORKER_BLOCK_NETWORK_LOADS))ServiceWorkerControllerCompat.getInstance().getServiceWorkerWebSettings().setBlockNetworkLoads(true);
+                                                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:72: Warning: getInstance should only be called if the feature PROXY_OVERRIDE is present; to check call androidx.webkit.WebViewFeature#isFeatureSupported [RequiresFeature]
+   ProxyController.getInstance().setProxyOverride(cfg,this::runOnUiThread,()->{if(!closed){ready=true;status.setText("Готово • загружено профилей: "+profiles.size()+" • нажмите «Подобрать и подключить»");}});
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "RequiresFeature":
+   Some APIs require optional features to be present. This check makes sure
+   that calls to these APIs are surrounded by a check which enforces this.
+
+/workspace/usroute-v03/usroute-android/app/build.gradle:14: Warning: A newer version of androidx.webkit:webkit than 1.12.1 is available: 1.17.1 [GradleDependency]
+ implementation 'androidx.webkit:webkit:1.12.1'
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "GradleDependency":
+   This detector looks for usages of libraries where the version you are using
+   is not the current stable release. Using older versions is fine, and there
+   are cases where you deliberately want to stick with an older version.
+   However, you may simply not be aware that a more recent version is
+   available, and that is what this lint check helps find.
+
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:49: Warning: Using setJavaScriptEnabled can introduce XSS vulnerabilities into your application, review carefully [SetJavaScriptEnabled]
+  WebSettings ws=web.getSettings(); ws.setBlockNetworkLoads(true);ws.setJavaScriptEnabled(true);ws.setDomStorageEnabled(true);ws.setAllowFileAccess(false);ws.setAllowContentAccess(false);ws.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);ws.setSupportMultipleWindows(false);ws.setMediaPlaybackRequiresUserGesture(true);ws.setCacheMode(WebSettings.LOAD_NO_CACHE);CookieManager.getInstance().setAcceptThirdPartyCookies(web,false);
+                                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetJavaScriptEnabled":
+   Your code should not invoke setJavaScriptEnabled if you are not sure that
+   your app really requires JavaScript support.
+
+   https://goo.gle/SetJavaScriptEnabled
+   https://developer.android.com/training/articles/security-tips
+
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:42: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+  Button free=new Button(this);free.setText("Обновить список с GitHub");settings.addView(free);free.setOnClickListener(v->confirmPublicSearch());
+                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:72: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+   ProxyController.getInstance().setProxyOverride(cfg,this::runOnUiThread,()->{if(!closed){ready=true;status.setText("Готово • загружено профилей: "+profiles.size()+" • нажмите «Подобрать и подключить»");}});
+                                                                                                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:88: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+   status.setText("Встроенный список загружен • профилей: "+profiles.size()+" • подключение только после проверки US");return true;
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:88: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+   status.setText("Встроенный список загружен • профилей: "+profiles.size()+" • подключение только после проверки US");return true;
+                                                                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:89: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+  }catch(Exception e){status.setText("Встроенный список не прочитан. Обновите с GitHub или импортируйте свой прокси. Сайты заблокированы.");return false;}
+                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:99: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+  disconnect();int ticket=generation.get();busy=true;connect.setEnabled(false);status.setText("Загружаем свежий список US с GitHub…");
+                                                                                              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:108: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+  busy=true;connect.setEnabled(false);lastScan=android.os.SystemClock.elapsedRealtime();int ticket=generation.get();List<ProxyProfile> snapshot=new ArrayList<>(profiles);status.setText("Проверяем US и выбираем минимальную задержку (до 70 секунд)…");
+                                                                                                                                                                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:113: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    if(result==null){selected=null;bridge.block();web.stopLoading();web.getSettings().setBlockNetworkLoads(true);status.setText("US-выход не найден за отведённое время • сайты заблокированы. Обновите список с GitHub или повторите проверку позже.");}
+                                                                                                                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:114: Warning: Do not concatenate text displayed with setText. Use resource string with placeholders. [SetTextI18n]
+    else{boolean changed=selected==null||!selected.id.equals(result.profile.id);selected=result.profile;if(changed)bridge.select(selected);web.getSettings().setBlockNetworkLoads(false);status.setText("US • "+selected.name+" • "+result.ip+" • "+result.latencyMs+" мс");if(explicit)navigate();else if(changed){web.stopLoading();web.loadUrl(pending);}}
+                                                                                                                                                                                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/workspace/usroute-v03/usroute-android/app/src/main/java/app/usroute/MainActivity.java:114: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+    else{boolean changed=selected==null||!selected.id.equals(result.profile.id);selected=result.profile;if(changed)bridge.select(selected);web.getSettings().setBlockNetworkLoads(false);status.setText("US • "+selected.name+" • "+result.ip+" • "+result.latencyMs+" мс");if(explicit)navigate();else if(changed){web.stopLoading();web.loadUrl(pending);}}
+                                                                                                                                                                                                        ~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
+0 errors, 17 warnings

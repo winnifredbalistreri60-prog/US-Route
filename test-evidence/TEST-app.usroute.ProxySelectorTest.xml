@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.usroute.ProxySelectorTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2026-10-19T16:43:17" hostname="947f0f2407f1" time="0.475">
+  <properties/>
+  <testcase name="slowerCompletedFirstDoesNotWinOverLaterLowerLatency" classname="app.usroute.ProxySelectorTest" time="0.116"/>
+  <testcase name="commonDeadlineDoesNotWaitForHangingTask" classname="app.usroute.ProxySelectorTest" time="0.152"/>
+  <testcase name="nonUsAndFailedResultsCannotWin" classname="app.usroute.ProxySelectorTest" time="0.002"/>
+  <testcase name="cancellationStopsCollectionAndCancelsOutstandingTasks" classname="app.usroute.ProxySelectorTest" time="0.203"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

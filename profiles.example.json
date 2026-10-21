@@ -1,0 +1,24 @@
+{
+  "profiles": [
+    {
+      "id": "us-primary",
+      "name": "Мой US-прокси",
+      "type": "http",
+      "host": "proxy-us.example.com",
+      "port": 8080,
+      "country": "US",
+      "username": "REPLACE_WITH_PROVIDER_USERNAME",
+      "password": "REPLACE_WITH_PROVIDER_PASSWORD"
+    },
+    {
+      "id": "us-backup",
+      "name": "Резервный US-прокси",
+      "type": "socks5",
+      "host": "backup-us.example.com",
+      "port": 1080,
+      "country": "US",
+      "username": "REPLACE_WITH_PROVIDER_USERNAME",
+      "password": "REPLACE_WITH_PROVIDER_PASSWORD"
+    }
+  ]
+}

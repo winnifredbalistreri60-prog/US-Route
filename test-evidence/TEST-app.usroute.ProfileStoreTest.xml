@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.usroute.ProfileStoreTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-10-19T16:43:17" hostname="947f0f2407f1" time="0.037">
+  <properties/>
+  <testcase name="rejectsInvalidCountryTypePortHostCrlfDuplicateAndOverTwenty" classname="app.usroute.ProfileStoreTest" time="0.032"/>
+  <testcase name="parsesValidHttpAndSocks5" classname="app.usroute.ProfileStoreTest" time="0.001"/>
+  <testcase name="parsesEmptyList" classname="app.usroute.ProfileStoreTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,30 @@
+{
+  "apk": "/workspace/usroute-delivery/US-Route-0.3-unified.apk",
+  "bytes": 960546,
+  "sha256": "e2622c07e02d9695e3d15731b6656366335bc6ab825c9d7b1b87ac3a2c7b7947",
+  "same_signing_certificate_as_original": true,
+  "certificate_sha256": "6ae2d8f9117832fed5e0ef5060de41eecbddbcf60777a3e1cab95b7b64bc3242",
+  "tests": {
+    "tests": 21,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "lint_errors": 0,
+  "lint_warnings": 16,
+  "native_libraries": [],
+  "assets_sha256": {
+    "proxy-list-LICENSE.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "proxy-list-source.json": "cbe616db9f1650d9370b4ce07676dc236c900700d504e88d374f0b5c54053048",
+    "us-proxies.txt": "e70e0076c720d2b513600f47e4115404b6b9659072d72d6f768c2c64ced73eb8"
+  },
+  "build_elapsed_seconds": 69.022,
+  "emulator": {
+    "boot_completed": false,
+    "apk_installed": false,
+    "activity_started": false,
+    "timeout_seconds": 180,
+    "elapsed_seconds": 180.3,
+    "emulator_exit_before_cleanup": null
+  }
+}

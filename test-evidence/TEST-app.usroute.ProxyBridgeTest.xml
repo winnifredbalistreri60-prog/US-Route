@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.usroute.ProxyBridgeTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-10-19T16:43:17" hostname="947f0f2407f1" time="0.154">
+  <properties/>
+  <testcase name="httpProxyAuthTunnelRelaysBytesAndBlockClosesLiveTunnel" classname="app.usroute.ProxyBridgeTest" time="0.044"/>
+  <testcase name="selectedProxyConnectionFailureReturns502WithoutDirectFallback" classname="app.usroute.ProxyBridgeTest" time="0.006"/>
+  <testcase name="forbiddenPortAndPlainGetAreRejected" classname="app.usroute.ProxyBridgeTest" time="0.007"/>
+  <testcase name="noProfileReturns503AndNeverDirectFallback" classname="app.usroute.ProxyBridgeTest" time="0.004"/>
+  <testcase name="socks5NegotiatesUsernamePasswordAndPassesDomainForRemoteDns" classname="app.usroute.ProxyBridgeTest" time="0.093"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.usroute.PublicProxySourceTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2026-10-19T16:43:18" hostname="947f0f2407f1" time="0.158">
+  <properties/>
+  <testcase name="deduplicatesEndpoints" classname="app.usroute.PublicProxySourceTest" time="0.002"/>
+  <testcase name="capsResultsAndSpreadsProtocols" classname="app.usroute.PublicProxySourceTest" time="0.014"/>
+  <testcase name="loadsBundledSnapshotLocally" classname="app.usroute.PublicProxySourceTest" time="0.132"/>
+  <testcase name="snapshotRejectsMoreThanOneMiB" classname="app.usroute.PublicProxySourceTest" time="0.003"/>
+  <testcase name="rejectsPrivateLoopbackAndReservedAddresses" classname="app.usroute.PublicProxySourceTest" time="0.001"/>
+  <testcase name="filtersUnsupportedAndMalformedSchemesAndAuthority" classname="app.usroute.PublicProxySourceTest" time="0.0"/>
+  <testcase name="rejectsCredentialsAndEmptyValidSet" classname="app.usroute.PublicProxySourceTest" time="0.0"/>
+  <testcase name="parsesValidEntriesAndMetadata" classname="app.usroute.PublicProxySourceTest" time="0.001"/>
+  <testcase name="starterIsPresentFirstAndNotDuplicated" classname="app.usroute.PublicProxySourceTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
